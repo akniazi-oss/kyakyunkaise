@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="کیا کیوں کیسے — ہر سوال کا جواب، ہر خبر کا تجزیہ، پاکستان اور دنیا سے"/>
+<meta name="keywords" content="Pakistan news, Urdu news, کیا کیوں کیسے, Pakistan current affairs, world news urdu"/>
+<meta property="og:title" content="کیا کیوں کیسے"/>
+<meta property="og:description" content="سچ جاننے کا حق سب کا ہے"/>
+<meta property="og:type" content="website"/>
+<title>کیا کیوں کیسے | ہر سوال کا جواب</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#EF9F27;
+  --gold-dark:#BA7517;
+  --gold-light:#FAC775;
+  --black:#0a0a0a;
+  --dark:#111111;
+  --dark2:#1a1a1a;
+  --text:#f0f0f0;
+  --text-muted:#999;
+  --urdu:'Noto Nastaliq Urdu',serif;
+  --latin:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:var(--latin);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(10,10,10,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(186,117,23,0.3);z-index:999;padding:0 2rem}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-direction:row-reverse}
+.nav-logo{font-family:var(--urdu);font-size:1.4rem;color:var(--gold);font-weight:700;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;flex-direction:row-reverse}
+.nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.85rem;letter-spacing:1px;transition:color 0.2s;font-family:var(--latin)}
+.nav-links a:hover{color:var(--gold)}
+.nav-fb{background:var(--gold);color:var(--black)!important;padding:8px 18px;border-radius:4px;font-weight:600;letter-spacing:0!important}
+.nav-fb:hover{background:var(--gold-light)!important;color:var(--black)!important}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:100px 2rem 60px}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,#1a1200 0%,#0a0a0a 70%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(186,117,23,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(186,117,23,0.06) 1px,transparent 1px);background-size:60px 60px}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero-badge{display:inline-block;border:1px solid var(--gold-dark);color:var(--gold);font-size:0.7rem;letter-spacing:3px;padding:6px 18px;margin-bottom:2rem;font-family:var(--latin)}
+.hero-title{font-family:var(--urdu);font-size:clamp(3rem,10vw,6rem);font-weight:700;color:var(--gold-light);line-height:1.3;margin-bottom:1rem;direction:rtl}
+.hero-divider{width:200px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.5rem auto}
+.hero-tagline{font-family:var(--urdu);font-size:clamp(1rem,3vw,1.4rem);color:var(--text-muted);direction:rtl;margin-bottom:0.5rem}
+.hero-tagline-en{font-size:0.8rem;letter-spacing:3px;color:var(--gold-dark);margin-bottom:3rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);padding:14px 32px;border:none;font-weight:600;font-size:0.9rem;letter-spacing:1px;cursor:pointer;text-decoration:none;transition:all 0.2s;font-family:var(--latin)}
+.btn-primary:hover{background:var(--gold-light)}
+.btn-secondary{background:transparent;color:var(--gold);padding:14px 32px;border:1px solid var(--gold-dark);font-size:0.9rem;letter-spacing:1px;cursor:pointer;text-decoration:none;transition:all 0.2s;font-family:var(--latin)}
+.btn-secondary:hover{background:rgba(186,117,23,0.1)}
+
+/* SECTION BASE */
+section{padding:80px 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.7rem;letter-spacing:4px;color:var(--gold-dark);margin-bottom:0.5rem;font-family:var(--latin)}
+.section-title{font-family:var(--urdu);font-size:clamp(1.8rem,5vw,2.8rem);color:var(--gold-light);direction:rtl;margin-bottom:1rem}
+.section-title-en{font-size:1.8rem;font-weight:600;color:var(--gold-light);margin-bottom:1rem}
+.gold-line{width:60px;height:2px;background:var(--gold);margin-bottom:2rem}
+.gold-line.center{margin:0 auto 2rem}
+
+/* ABOUT */
+.about{background:var(--dark)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text p{color:var(--text-muted);margin-bottom:1rem;line-height:1.8;font-size:0.95rem}
+.about-text .urdu-p{font-family:var(--urdu);direction:rtl;font-size:1.1rem;color:var(--text);line-height:2}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{background:var(--dark2);border:1px solid rgba(186,117,23,0.2);padding:1.5rem;text-align:center}
+.stat-num{font-size:2.2rem;font-weight:700;color:var(--gold);display:block}
+.stat-label{font-size:0.75rem;color:var(--text-muted);letter-spacing:2px;margin-top:4px}
+
+/* TOPICS */
+.topics{background:var(--black)}
+.topics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(186,117,23,0.15);border:1px solid rgba(186,117,23,0.15)}
+.topic-card{background:var(--black);padding:2rem 1.5rem;text-align:center;transition:background 0.2s;cursor:default}
+.topic-card:hover{background:var(--dark2)}
+.topic-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.topic-name{font-family:var(--urdu);font-size:1.1rem;color:var(--gold-light);direction:rtl;display:block;margin-bottom:0.5rem}
+.topic-name-en{font-size:0.7rem;letter-spacing:2px;color:var(--text-muted)}
+
+/* MISSION */
+.mission{background:var(--dark);text-align:center}
+.mission-quote{font-family:var(--urdu);font-size:clamp(1.4rem,4vw,2.2rem);color:var(--gold-light);direction:rtl;max-width:700px;margin:0 auto 1.5rem;line-height:1.8}
+.mission-sub{font-size:0.85rem;color:var(--text-muted);letter-spacing:2px;max-width:500px;margin:0 auto 3rem}
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:3rem;text-align:right}
+.value-item{border-right:2px solid var(--gold-dark);padding-right:1.5rem}
+.value-title{font-family:var(--urdu);font-size:1.1rem;color:var(--gold);direction:rtl;margin-bottom:0.5rem}
+.value-desc{font-size:0.85rem;color:var(--text-muted);direction:rtl;font-family:var(--urdu);line-height:1.8}
+
+/* CONNECT */
+.connect{background:var(--black);text-align:center}
+.fb-card{display:inline-block;background:var(--dark2);border:1px solid rgba(186,117,23,0.3);padding:3rem;max-width:500px;width:100%;margin:2rem auto 0}
+.fb-icon{font-size:3rem;margin-bottom:1rem;display:block}
+.fb-card h3{font-family:var(--urdu);font-size:1.4rem;color:var(--gold-light);direction:rtl;margin-bottom:0.5rem}
+.fb-card p{font-size:0.85rem;color:var(--text-muted);margin-bottom:2rem}
+.fb-btn{display:inline-block;background:var(--gold);color:var(--black);padding:14px 40px;font-weight:700;font-size:0.9rem;letter-spacing:1px;text-decoration:none;transition:all 0.2s}
+.fb-btn:hover{background:var(--gold-light)}
+
+/* PRIVACY */
+.privacy{background:var(--dark);text-align:right}
+.privacy-content{max-width:800px;margin:0 auto}
+.privacy-content h3{font-family:var(--urdu);font-size:1.2rem;color:var(--gold);direction:rtl;margin:2rem 0 0.5rem}
+.privacy-content p{font-family:var(--urdu);font-size:1rem;color:var(--text-muted);direction:rtl;line-height:2;margin-bottom:1rem}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid rgba(186,117,23,0.2);padding:2rem;text-align:center}
+.footer-logo{font-family:var(--urdu);font-size:1.5rem;color:var(--gold);margin-bottom:0.5rem}
+.footer-sub{font-size:0.75rem;color:var(--text-muted);letter-spacing:2px}
+.footer-links{display:flex;gap:1.5rem;justify-content:center;margin:1rem 0;flex-wrap:wrap}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:0.8rem;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:0.75rem;color:#444;margin-top:1rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .about-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .values{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">کیا کیوں کیسے</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#topics">Topics</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="https://www.facebook.com" target="_blank" class="nav-fb">Facebook Page ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">PAKISTAN · WORLD · TRUTH</div>
+    <h1 class="hero-title">کیا کیوں کیسے</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">سچ جاننے کا حق سب کا ہے</p>
+    <p class="hero-tagline-en">THE RIGHT TO KNOW · FOR EVERYONE</p>
+    <div class="hero-btns">
+      <a href="https://www.facebook.com" target="_blank" class="btn-primary">Follow on Facebook ↗</a>
+      <a href="#about" class="btn-secondary">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">WHO WE ARE</p>
+        <h2 class="section-title">ہمارے بارے میں</h2>
+        <div class="gold-line"></div>
+        <p class="urdu-p">کیا کیوں کیسے ایک آزاد ڈیجیٹل میڈیا پلیٹ فارم ہے جہاں ہم پاکستان اور دنیا کی ہر خبر کو تین سوالوں کی روشنی میں پیش کرتے ہیں۔</p>
+        <p class="urdu-p">ہمارا مقصد عام آدمی تک سچ پہنچانا ہے — بغیر کسی تعصب کے، بغیر کسی پارٹی کے، صرف حقیقت کے ساتھ۔</p>
+        <p style="color:var(--text-muted);font-size:0.9rem;margin-top:1rem">We are an independent digital media platform covering Pakistan and world affairs through the lens of three fundamental questions — What, Why, and How.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-num">10K+</span>
+          <span class="stat-label">FOLLOWERS</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">INDEPENDENT</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">COVERAGE</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">PK</span>
+          <span class="stat-label">BASED · GLOBAL VIEW</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="topics" id="topics">
+  <div class="container">
+    <p class="section-label" style="text-align:center">WHAT WE COVER</p>
+    <h2 class="section-title" style="text-align:center">ہم کیا cover کرتے ہیں</h2>
+    <div class="gold-line center"></div>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <span class="topic-icon">🇵🇰</span>
+        <span class="topic-name">پاکستان کی خبریں</span>
+        <span class="topic-name-en">PAKISTAN NEWS</span>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🌍</span>
+        <span class="topic-name">عالمی معاملات</span>
+        <span class="topic-name-en">WORLD AFFAIRS</span>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">⚖️</span>
+        <span class="topic-name">سیاسی تجزیہ</span>
+        <span class="topic-name-en">POLITICAL ANALYSIS</span>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">💰</span>
+        <span class="topic-name">معیشت</span>
+        <span class="topic-name-en">ECONOMY</span>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">🏙️</span>
+        <span class="topic-name">مقامی خبریں</span>
+        <span class="topic-name-en">LOCAL NEWS</span>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon">💡</span>
+        <span class="topic-name">سماجی مسائل</span>
+        <span class="topic-name-en">SOCIAL ISSUES</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission" id="mission">
+  <div class="container">
+    <p class="section-label">OUR MISSION</p>
+    <div class="gold-line center"></div>
+    <p class="mission-quote">"ہر خبر کے پیچھے تین سوال ہوتے ہیں — کیا ہوا، کیوں ہوا، اور کیسے ہوا۔ ہم وہ جواب ڈھونڈتے ہیں۔"</p>
+    <p class="mission-sub">Behind every story are three questions — What happened, Why it happened, and How it happened. We find the answers.</p>
+    <div class="values">
+      <div class="value-item">
+        <p class="value-title">سچائی</p>
+        <p class="value-desc">ہم صرف تصدیق شدہ خبریں شیئر کرتے ہیں</p>
+      </div>
+      <div class="value-item">
+        <p class="value-title">آزادی</p>
+        <p class="value-desc">کسی پارٹی یا گروہ سے وابستگی نہیں</p>
+      </div>
+      <div class="value-item">
+        <p class="value-title">عوام کی آواز</p>
+        <p class="value-desc">ہر طبقے کی بات، ہر علاقے کی خبر</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect" id="connect">
+  <div class="container">
+    <p class="section-label" style="text-align:center">FIND US</p>
+    <h2 class="section-title-en" style="text-align:center">Follow Our Facebook Page</h2>
+    <div class="gold-line center"></div>
+    <div class="fb-card">
+      <span class="fb-icon">📘</span>
+      <h3>کیا کیوں کیسے</h3>
+      <p>روزانہ کی خبریں، تجزیے اور بحث — ہمارے Facebook صفحے پر آئیں</p>
+      <a href="https://www.facebook.com" target="_blank" class="fb-btn">Follow on Facebook ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY POLICY -->
+<section class="privacy" id="privacy">
+  <div class="container privacy-content">
+    <p class="section-label" style="text-align:right">LEGAL</p>
+    <h2 class="section-title">پرائیویسی پالیسی</h2>
+    <div class="gold-line"></div>
+
+    <h3>معلومات کا استعمال</h3>
+    <p>کیا کیوں کیسے ایک Facebook پیج اور ڈیجیٹل میڈیا پلیٹ فارم ہے۔ ہم اپنے صارفین کی ذاتی معلومات اکٹھی نہیں کرتے۔ ہماری ویب سائٹ پر آنے والوں کا ڈیٹا کسی تیسرے فریق کو فروخت یا شیئر نہیں کیا جاتا۔</p>
+
+    <h3>کوکیز (Cookies)</h3>
+    <p>یہ ویب سائٹ بنیادی کوکیز استعمال کر سکتی ہے تاکہ آپ کا تجربہ بہتر بنایا جا سکے۔ آپ اپنے براؤزر کی سیٹنگز سے کوکیز کو بند کر سکتے ہیں۔</p>
+
+    <h3>تھرڈ پارٹی لنکس</h3>
+    <p>ہماری ویب سائٹ Facebook اور دیگر پلیٹ فارمز کے لنکس رکھتی ہے۔ ان پلیٹ فارمز کی اپنی پرائیویسی پالیسی ہے جس کے ہم ذمہ دار نہیں ہیں۔</p>
+
+    <h3>مواد کی ذمہ داری</h3>
+    <p>ہم اپنے پلیٹ فارم پر شیئر کیے گئے مواد کی درستگی کو یقینی بنانے کی کوشش کرتے ہیں۔ تاہم ہم کسی بھی غلطی کی ذمہ داری قبول نہیں کرتے۔ خبروں کی تصدیق کے لیے متعدد ذرائع سے رجوع کریں۔</p>
+
+    <h3>رابطہ</h3>
+    <p>کسی بھی سوال یا شکایت کے لیے ہمارے Facebook پیج پر پیغام بھیجیں۔</p>
+
+    <p style="color:var(--text-muted);font-size:0.8rem;margin-top:2rem;font-family:var(--latin);direction:ltr">Last updated: June 2026</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">کیا کیوں کیسے</div>
+  <div class="footer-sub">EVERY QUESTION · EVERY ANGLE · EVERY TRUTH</div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#topics">Topics</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="https://www.facebook.com" target="_blank">Facebook ↗</a>
+  </div>
+  <div class="footer-copy">© 2026 کیا کیوں کیسے · All Rights Reserved · Pakistan</div>
+</footer>
+
+</body>
+</html>
